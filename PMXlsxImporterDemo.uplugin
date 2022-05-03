@@ -1,0 +1,29 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "PMXlsxImporterDemo",
+	"Description": "Contains sample code and assets to show the features of PMXlsxImporter.",
+	"Category": "Other",
+	"CreatedBy": "Proletariat, Inc.",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "PMXlsxImporterDemo",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "PMXlsxImporter",
+			"Enabled": true
+		}
+	]
+}
