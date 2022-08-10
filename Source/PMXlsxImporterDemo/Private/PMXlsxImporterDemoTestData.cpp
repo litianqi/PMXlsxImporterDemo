@@ -6,10 +6,10 @@ void UPMXlsxImporterDemoTestData::ValidateImpl(FPMXlsxImporterContextLogger& InO
 {
 	Super::ValidateImpl(InOutErrors);
 
-	if (StartTime >= EndTime)
-	{
-		InOutErrors.Logf(TEXT("StartTime %s must be before EndTime %s"), *StartTime.ToString(), *EndTime.ToString());
-	}
+	// if (StartTime >= EndTime)
+	// {
+	// 	InOutErrors.Logf(TEXT("StartTime %s must be before EndTime %s"), *StartTime.ToString(), *EndTime.ToString());
+	// }
 }
 
 void UPMXlsxImporterDemoTestData::ValidateAgainstPreviousImpl(const UPMXlsxDataAsset* Previous, FPMXlsxImporterContextLogger& InOutErrors) const
@@ -22,12 +22,12 @@ void UPMXlsxImporterDemoTestData::ValidateAgainstPreviousImpl(const UPMXlsxDataA
 	}
 
 	const UPMXlsxImporterDemoTestData* PrevTestData = Cast<UPMXlsxImporterDemoTestData>(Previous);
-	if (StartTime < PrevTestData->EndTime)
-	{
-		InOutErrors.Logf(TEXT("StartTime (%s) must be after EndTime of %s (%s)"),
-						 *StartTime.ToString(),
-						 *PrevTestData->GetName(),
-						 *PrevTestData->EndTime.ToString());
-	}
+	// if (StartTime < PrevTestData->EndTime)
+	// {
+	// 	InOutErrors.Logf(TEXT("StartTime (%s) must be after EndTime of %s (%s)"),
+	// 					 *StartTime.ToString(),
+	// 					 *PrevTestData->GetName(),
+	// 					 *PrevTestData->EndTime.ToString());
+	// }
 }
 #endif

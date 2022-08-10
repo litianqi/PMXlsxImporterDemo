@@ -13,14 +13,19 @@ enum class EPMTestEnumUInt8 : uint8
 	MAX
 };
 
-UENUM()
-enum class EPMTestEnumInt32 : int32
+
+USTRUCT(BlueprintType)
+struct PMXLSXIMPORTERDEMO_API FPMXlsxImporterDemoTestStruct
 {
-	EnumInt32_Zero,
-	EnumInt32_One,
-	EnumInt32_Two,
-	MAX
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
+	float X;
+
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
+	float Y;
 };
+
 
 UCLASS()
 class PMXLSXIMPORTERDEMO_API UPMXlsxImporterDemoTestData : public UPMXlsxDataAsset
@@ -35,36 +40,13 @@ public:
 	float Float;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	double Double;
+	uint8 Byte;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	int8 Integer8;
-
-	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	uint8 UInteger8;
-
-	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	int16 Integer16;
-
-	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	uint16 UInteger16;
-
-	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	int32 Integer32;
-
-	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	uint32 UInteger32;
+	int32 Integer;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
 	int64 Integer64;
-
-	// uint64 is not supported
-
-	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	FDateTime StartTime;
-
-	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	FDateTime EndTime;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
 	FString String;
@@ -73,10 +55,7 @@ public:
 	FText Text;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	EPMTestEnumUInt8 EnumUInt8;
-
-	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	EPMTestEnumInt32 EnumInt32;
+	EPMTestEnumUInt8 Enum;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
 	FPrimaryAssetType AssetType;
@@ -87,6 +66,22 @@ public:
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
 	TArray<int32> IntArray;
 
+	// json struct (write json in excel cell) is not supported
+	
+	// UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
+	// FVector2D Struct;
+
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX, SplitStructInXLSX))
+	FPMXlsxImporterDemoTestStruct SplitStruct;
+
+	// json struct (write json in excel cell) is not supported
+	
+	// UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
+	// TArray<FVector2D> StructArray;
+
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX, SplitStructInXLSX))
+	TArray<FPMXlsxImporterDemoTestStruct> SplitStructArray;
+	
 protected:
 
 #ifdef WITH_EDITOR
