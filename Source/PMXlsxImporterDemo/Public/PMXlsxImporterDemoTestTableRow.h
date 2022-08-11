@@ -47,20 +47,22 @@ struct PMXLSXIMPORTERDEMO_API FPMXlsxImporterDemoTestTableRow : public FTableRow
 	FPrimaryAssetId AssetId;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
+	FDateTime DateTime;
+
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
 	TArray<int32> IntArray;
 
-	// json struct (write json in excel cell) is not supported
-	
-	// UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	// FVector2D Struct;
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
+	FColor Color;
+
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
+	FVector2D Struct;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX, SplitStructInXLSX))
 	FPMXlsxImporterDemoTestStruct SplitStruct;
 
-	// json struct (write json in excel cell) is not supported
-	
-	// UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	// TArray<FVector2D> StructArray;
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
+	TArray<FVector2D> StructArray;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX, SplitStructInXLSX))
 	TArray<FPMXlsxImporterDemoTestStruct> SplitStructArray;
