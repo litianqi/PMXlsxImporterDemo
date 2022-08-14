@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "PMXlsxDataAsset.h"
 #include "PMXlsxImporterDemoTestData.generated.h"
 
@@ -84,6 +85,11 @@ public:
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX, SplitStructInXLSX))
 	TArray<FPMXlsxImporterDemoTestStruct> SplitStructArray;
 	
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX, GameplayTagFilter="Ability"))
+	FGameplayTag Tag;
+
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX, GameplayTagFilter="Ability"))
+	FGameplayTagContainer TagContainer;
 protected:
 
 #ifdef WITH_EDITOR

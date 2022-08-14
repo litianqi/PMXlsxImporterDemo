@@ -1,3 +1,4 @@
+
 // Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
 
 using UnrealBuildTool;
@@ -19,6 +20,7 @@ public class PMXlsxImporterDemo : ModuleRules
 				"Slate",
 				"SlateCore",
 				"UMG",
+				"GameplayTags",
 				"PMXlsxImporter"
 			}
 		);

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "PMXlsxImporterDemoTestData.h"
 #include "Engine/DataTable.h"
 #include "UObject/Object.h"
@@ -66,4 +67,10 @@ struct PMXLSXIMPORTERDEMO_API FPMXlsxImporterDemoTestTableRow : public FTableRow
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX, SplitStructInXLSX))
 	TArray<FPMXlsxImporterDemoTestStruct> SplitStructArray;
+
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX, GameplayTagFilter="Ability"))
+	FGameplayTag Tag;
+
+	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX, GameplayTagFilter="Ability"))
+	FGameplayTagContainer TagContainer;
 };
