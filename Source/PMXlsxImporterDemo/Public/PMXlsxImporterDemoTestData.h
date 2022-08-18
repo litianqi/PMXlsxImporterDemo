@@ -21,10 +21,10 @@ struct PMXLSXIMPORTERDEMO_API FPMXlsxImporterDemoTestStruct
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	float X;
+	float X = 0.f;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	float Y;
+	float Y = 0.f;
 };
 
 
@@ -35,19 +35,19 @@ class PMXLSXIMPORTERDEMO_API UPMXlsxImporterDemoTestData : public UPMXlsxDataAss
 
 public:
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	bool bBool;
+	bool bBool = false;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	float Float;
+	float Float = 0.f;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	uint8 Byte;
+	uint8 Byte = 0;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	int32 Integer;
+	int32 Integer = 0;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	int64 Integer64;
+	int64 Integer64 = 0;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
 	FString String;
@@ -56,7 +56,7 @@ public:
 	FText Text;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	EPMTestEnumUInt8 Enum;
+	EPMTestEnumUInt8 Enum = EPMTestEnumUInt8::EnumUInt8_Zero;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
 	FPrimaryAssetType AssetType;
@@ -71,10 +71,10 @@ public:
 	TArray<int32> IntArray;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	FColor Color;
+	FColor Color = FColor::Black;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX))
-	FVector2D Struct;
+	FVector2D Struct = FVector2D::ZeroVector;
 
 	UPROPERTY(EditAnywhere, Meta=(ImportFromXLSX, SplitStructInXLSX))
 	FPMXlsxImporterDemoTestStruct SplitStruct;
